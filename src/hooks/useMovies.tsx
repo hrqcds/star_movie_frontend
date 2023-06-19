@@ -35,7 +35,10 @@ export function useMovies() {
     } catch (error) {
       if (error instanceof AxiosError) {
         toast.error("Erro ao carregar filmes!");
+        return;
       }
+
+      toast.error("Erro ao carregar filmes!");
     }
   }
 
