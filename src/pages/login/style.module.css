@@ -2,8 +2,5 @@
     display: grid;
     place-items: center;
     grid-template: 1fr / 1fr 1fr;
-    
-
     height: 100vh;
-    background-color:#40434E;
 }
