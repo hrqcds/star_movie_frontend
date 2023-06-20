@@ -1,5 +1,4 @@
 import { AxiosError } from "axios";
-import { DataResponse } from "../Generics/DataResponse";
 import api from "../config/axios";
 import { MovieListResponse } from "../dtos/MovieListResponse";
 import toast from "react-hot-toast";

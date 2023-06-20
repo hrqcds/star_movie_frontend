@@ -4,9 +4,9 @@ export function Navbar() {
   return (
     <>
       <div className={style.nav}>
-        <Link to="/movies">Filmes</Link>
-        <Link to="/users">Usuários</Link>
-        <Link to="/logout">Sair</Link>
+        <Link to="/" onClick={() => sessionStorage.clear()}>
+          Sair
+        </Link>
       </div>
     </>
   );
