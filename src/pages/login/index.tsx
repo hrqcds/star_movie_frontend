@@ -1,6 +1,7 @@
 import { Button, Form, Input, Image, Space, Typography } from "antd";
 import style from "./style.module.css";
 import { useLogin } from "../../hooks/useLogin";
+import { toast } from "react-hot-toast";
 
 // adicionar react-router-dom
 // criar componente de cadastro
@@ -48,6 +49,7 @@ export function Login() {
             borderRadius: "5px",
           }}
           onFinish={async () => await login()}
+          onFinishFailed={() => toast.error("Erro ao logar")}
         >
           <Typography.Paragraph>Email</Typography.Paragraph>
           <Form.Item>

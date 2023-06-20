@@ -23,12 +23,23 @@ export function useMovies() {
   const [query, setQuery] = useState<MovieProps>({
     take: 10,
     skip: 0,
+    title: "",
   });
+  const [visibleCreateModal, setVisibleCreateModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [selectedId, setSelectedId] = useState("");
+
+  function showModalCreate() {
+    setVisibleCreateModal((state) => !state);
+  }
 
   async function getMovies() {
     try {
+      setLoading(true);
       const response = (
-        await api.get(`api/movies?take=${query.take}&skip=${query.skip}`)
+        await api.get(
+          `api/movies?take=${query.take}&skip=${query.skip}&title=${query.title}`
+        )
       ).data;
 
       return response;
@@ -39,6 +50,8 @@ export function useMovies() {
       }
 
       toast.error("Erro ao carregar filmes!");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -51,14 +64,17 @@ export function useMovies() {
         total: response.Total,
       });
     });
-  }, []);
+  }, [query]);
 
   return {
     query,
     setQuery,
     movies,
     setMovies,
-
-    getMovies,
+    visibleCreateModal,
+    showModalCreate,
+    selectedId,
+    setSelectedId,
+    loading,
   };
 }
