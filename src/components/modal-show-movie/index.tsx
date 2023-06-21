@@ -1,4 +1,4 @@
-import { Layout, Space, Image, Descriptions } from "antd";
+import { Space, Image, Descriptions } from "antd";
 import api from "../../config/axios";
 import { useEffect, useState } from "react";
 import { Movie } from "../../dtos/MovieResponse";

@@ -1,5 +1,5 @@
 import { Button, Form, Input, Modal, Upload } from "antd";
-import { UploadChangeParam, UploadFile, UploadProps } from "antd/es/upload";
+import { UploadFile, UploadProps } from "antd/es/upload";
 import { useState } from "react";
 import api from "../../config/axios";
 import { toast } from "react-hot-toast";
