@@ -62,7 +62,7 @@ export function Movies() {
           </Col>
         </Row>
         <Row justify="center" align="middle" wrap={true} gutter={[15, 20]}>
-          {movies.data.length > 0 &&
+          {movies.data && movies.data.length > 0 &&
             movies.data.map((movie) => {
               return (
                 <Col key={movie.id}>
